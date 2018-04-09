@@ -15,6 +15,7 @@ import { PostDetailComponent } from './post-detail/post-detail.component';
 
 import { AlertModule } from 'ngx-bootstrap';
 import { ModalModule } from 'ngx-bootstrap/modal';
+import { ErrorHandlerComponent, ErrorHandlerModalComponent } from './error-handler/error-handler.component';
 
 
 @NgModule({
@@ -23,7 +24,9 @@ import { ModalModule } from 'ngx-bootstrap/modal';
     LoginComponent,
     WallComponent,
     LogoutComponent,
-    PostDetailComponent
+    PostDetailComponent,
+    ErrorHandlerComponent,
+    ErrorHandlerModalComponent
   ],
   imports: [
     BrowserModule,
@@ -35,7 +38,12 @@ import { ModalModule } from 'ngx-bootstrap/modal';
   ],
   providers: [
     AuthserviceService,
-    GetPostsService
+    GetPostsService,
+    ErrorHandlerComponent
+  ],
+  entryComponents: [
+    ErrorHandlerModalComponent,
+    ErrorHandlerComponent
   ],
   bootstrap: [AppComponent]
 })

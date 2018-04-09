@@ -13,14 +13,17 @@ export class GetPostsService {
 
   public getAllPosts () {
     const promise = new Promise((resolve, reject) => {
-    this.http.get(GetPostsService.HTTP_GET_POSTS_ENDPOINT)
-        .toPromise()
-        .then(
-          res => {
-            const posts: Post[] = this.buildPosts(res);
-            resolve(posts);
-          }
-        );
+      this.http.get(GetPostsService.HTTP_GET_POSTS_ENDPOINT)
+          .toPromise()
+          .then(
+            res => {
+              const posts: Post[] = this.buildPosts(res);
+              resolve(posts);
+            },
+            error => {
+              reject(error);
+            }
+          );
     });
     return promise;
   }
@@ -33,17 +36,22 @@ export class GetPostsService {
           res => {
             const post = this.buildSinglePost(res);
             resolve(post);
+          },
+          error => {
+            reject(error);
           }
         );
     });
     return promise;
   }
 
+  // potentially could be moved to separate service for handling DTO tranformation etc..
   private buildSinglePost(postFromHttp: any) {
     const post = new Post(postFromHttp.id, postFromHttp.userId, postFromHttp.title, postFromHttp.body);
     return post;
   }
 
+  // potentially could be moved to separate service for handling DTO tranformation etc..
   private buildPosts (httpPostsArray): Post[] {
     const posts: Post[] = [];
     for (const postHttp of httpPostsArray) {

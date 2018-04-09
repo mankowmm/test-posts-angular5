@@ -1,7 +1,10 @@
 <div><a [routerLink]="['/wall']">Go back to wall</a></div>
 
 <h1>Details</h1>
-<div>UserId:{{post.userId}}</div>
-<div>Id: {{post.id}}</div>
-<div>Ttitle:{{post.title}}</div>
-<div>Body:{{post.body}}</div>
+
+<div *ngIf="loaded">
+    <div>UserId:{{post.userId}}</div>
+    <div>Id: {{post.id}}</div>
+    <div>Ttitle:{{post.title}}</div>
+    <div>Body:{{post.body}}</div>
+</div>

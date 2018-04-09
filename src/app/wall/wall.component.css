@@ -1,0 +1,10 @@
+.mm-wall-component {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.mm-wall-post {
+    width: calc(33% - 20px);
+    margin: 10px;
+    border: 1px solid gray;
+}

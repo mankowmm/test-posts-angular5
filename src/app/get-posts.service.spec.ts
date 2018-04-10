@@ -5,14 +5,15 @@ import { HttpClientModule } from '@angular/common/http';
 describe('GetPostsService', () => {
   beforeEach(() => {
     TestBed.configureTestingModule({
-      providers: [GetPostsService],
       imports: [
         HttpClientModule
-      ]
+      ],
+      providers: [GetPostsService, HttpClientModule]
     });
   });
 
   it('should be created', inject([GetPostsService], (service: GetPostsService) => {
     expect(service).toBeTruthy();
   }));
+
 });

@@ -1,7 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClientModule, HttpClient } from '@angular/common/http';
 
 import { AppRoutingModule } from './app-routing.module';
 
@@ -44,7 +44,8 @@ import { BsModalService } from 'ngx-bootstrap/modal';
     AuthserviceService,
     GetPostsService,
     ErrorHandlerComponent,
-    BsModalService
+    BsModalService,
+    HttpClient
   ],
   entryComponents: [
     ErrorHandlerModalComponent,

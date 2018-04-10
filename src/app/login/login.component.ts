@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, EventEmitter, Input, Output } from '@angular/core';
 import { NgModel } from '@angular/forms';
 import { User } from '../model/user';
 import { AuthserviceService } from '../authservice.service';
@@ -10,6 +10,8 @@ import { Router } from '@angular/router';
   styleUrls: ['./login.component.less']
 })
 export class LoginComponent implements OnInit {
+
+  @Output() loggedIn = new EventEmitter<boolean>();
 
   private userModel;
   private formSubmitted: boolean;
@@ -42,11 +44,15 @@ export class LoginComponent implements OnInit {
     }
 
     // login user
+    console.log('login.component validaiton..');
     if (isFormValid) {
       this.authService.authenticateUser(this.userModel.username, this.userModel.password).then(() => {
         console.log('auth success..');
+        this.loggedIn.emit(true);
         this.router.navigate(['wall']);
       });
+    } else {
+      this.loggedIn.emit(false);
     }
   }
 

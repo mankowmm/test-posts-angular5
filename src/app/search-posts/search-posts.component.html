@@ -2,6 +2,6 @@
   type="text" 
   class="form-control search-input" 
   placeholder="search" 
-  [(ngModel)]="search" 
-  name="search"
-  ng-minlength="5">
+  name="searchPhrase"
+  ng-minlength="5"
+  (input)="onSearchChange($event.target.value)">

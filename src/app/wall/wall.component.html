@@ -5,12 +5,12 @@
                 <app-logout></app-logout>
         </div>
         <div class="right">
-            <app-search-posts></app-search-posts>
+            <app-search-posts (searchTextUpdated)="handleSearchPosts($event)"></app-search-posts>
         </div>
     </div>
 
     <div class="posts">
-        <div *ngFor="let post of posts" class="post"> 
+        <div *ngFor="let post of posts | filter : searchPhrase" class="post"> 
             <a [routerLink]="['/post', post.id]">
                 <div class="user-section">UserId: {{ post.userId }}</div>
                 <div class="title-section">Title: {{ post.title }}</div>

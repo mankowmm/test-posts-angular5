@@ -12,6 +12,7 @@ import { ErrorHandlerComponent } from '../error-handler/error-handler.component'
 export class WallComponent implements OnInit {
 
   private posts: Post[];
+  private searchPhrase: string;
   constructor(private getPostService: GetPostsService, private errorHandler: ErrorHandlerComponent) { }
 
   ngOnInit() {
@@ -22,6 +23,10 @@ export class WallComponent implements OnInit {
     .catch((error) => {
       this.errorHandler.openModal('Wystapil blad - prosimy sprobowac pozniej', JSON.stringify(error.message));
     });
+  }
+
+  handleSearchPosts(searchPhrase: string): void {
+    this.searchPhrase = searchPhrase;
   }
 
 }

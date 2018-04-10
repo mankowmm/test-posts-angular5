@@ -17,6 +17,7 @@ import { AlertModule } from 'ngx-bootstrap';
 import { ModalModule } from 'ngx-bootstrap/modal';
 import { ErrorHandlerComponent, ErrorHandlerModalComponent } from './error-handler/error-handler.component';
 import { SearchPostsComponent } from './search-posts/search-posts.component';
+import { PostFilterPipe } from './post.filter.pipe';
 
 
 @NgModule({
@@ -28,7 +29,8 @@ import { SearchPostsComponent } from './search-posts/search-posts.component';
     PostDetailComponent,
     ErrorHandlerComponent,
     ErrorHandlerModalComponent,
-    SearchPostsComponent
+    SearchPostsComponent,
+    PostFilterPipe
   ],
   imports: [
     BrowserModule,

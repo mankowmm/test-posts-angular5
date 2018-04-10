@@ -18,7 +18,7 @@ import { ModalModule } from 'ngx-bootstrap/modal';
 import { ErrorHandlerComponent, ErrorHandlerModalComponent } from './error-handler/error-handler.component';
 import { SearchPostsComponent } from './search-posts/search-posts.component';
 import { PostFilterPipe } from './post.filter.pipe';
-
+import { BsModalService } from 'ngx-bootstrap/modal';
 
 @NgModule({
   declarations: [
@@ -43,7 +43,8 @@ import { PostFilterPipe } from './post.filter.pipe';
   providers: [
     AuthserviceService,
     GetPostsService,
-    ErrorHandlerComponent
+    ErrorHandlerComponent,
+    BsModalService
   ],
   entryComponents: [
     ErrorHandlerModalComponent,

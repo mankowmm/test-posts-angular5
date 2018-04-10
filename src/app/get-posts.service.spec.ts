@@ -1,11 +1,14 @@
 import { TestBed, inject } from '@angular/core/testing';
-
 import { GetPostsService } from './get-posts.service';
+import { HttpClientModule } from '@angular/common/http';
 
 describe('GetPostsService', () => {
   beforeEach(() => {
     TestBed.configureTestingModule({
-      providers: [GetPostsService]
+      providers: [GetPostsService],
+      imports: [
+        HttpClientModule
+      ]
     });
   });
 

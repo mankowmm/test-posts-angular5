@@ -44,6 +44,7 @@ export class ErrorHandlerComponent implements OnInit {
       </button>
     </div>
     <div class="modal-body">
+      <div>Technical details of message - only for demo purpose</div>
       {{message}}
     </div>
     <div class="modal-footer">

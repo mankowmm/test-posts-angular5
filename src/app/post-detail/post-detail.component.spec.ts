@@ -1,6 +1,7 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
-
 import { PostDetailComponent } from './post-detail.component';
+import { RouterTestingModule } from '@angular/router/testing';
+import { GetPostsService } from '../get-posts.service';
 
 describe('PostDetailComponent', () => {
   let component: PostDetailComponent;
@@ -8,7 +9,13 @@ describe('PostDetailComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ PostDetailComponent ]
+      declarations: [ PostDetailComponent ],
+      imports: [
+        RouterTestingModule
+      ],
+      providers: [
+        GetPostsService
+      ]
     })
     .compileComponents();
   }));

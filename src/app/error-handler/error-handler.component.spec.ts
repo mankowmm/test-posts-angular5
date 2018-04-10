@@ -1,6 +1,8 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { ErrorHandlerComponent } from './error-handler.component';
+import { AlertModule } from 'ngx-bootstrap';
+import { ModalModule } from 'ngx-bootstrap/modal';
 
 describe('ErrorHandlerComponent', () => {
   let component: ErrorHandlerComponent;
@@ -8,7 +10,11 @@ describe('ErrorHandlerComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ ErrorHandlerComponent ]
+      declarations: [ ErrorHandlerComponent ],
+      imports: [
+        AlertModule.forRoot(),
+        ModalModule.forRoot()
+      ],
     })
     .compileComponents();
   }));

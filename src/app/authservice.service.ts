@@ -40,18 +40,25 @@ export class AuthserviceService {
   public authenticateUser(username: string, password: string) {
     // there should be some real check of username, password in API/DB etc..
     // for this demo app it's skipped - just pretending async checking etc..
+    // assume only success for demo purp..
     return new Promise((resolve, reject) => {
       setTimeout(() => {
         localStorage.setItem(AuthserviceService.USERNAME_STORAGE_KEY, username);
         resolve();
-      }, 1000);
+      }, 500);
     });
   }
 
   // only fake check - store in local storage
-  public logoutUser(username: string, password: string) {
+  public logoutUser() {
     // for demo app just remove item from local Storage
-    localStorage.removeItem(AuthserviceService.USERNAME_STORAGE_KEY);
+    // assume only success for demo purp..
+    return new Promise((resolve, reject) => {
+      setTimeout(() => {
+        localStorage.removeItem(AuthserviceService.USERNAME_STORAGE_KEY);
+        resolve();
+      }, 300);
+    });
   }
 
 

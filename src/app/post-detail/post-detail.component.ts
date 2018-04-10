@@ -7,7 +7,7 @@ import { ErrorHandlerComponent } from '../error-handler/error-handler.component'
 @Component({
   selector: 'app-post-detail',
   templateUrl: './post-detail.component.html',
-  styleUrls: ['./post-detail.component.css']
+  styleUrls: ['./post-detail.component.less']
 })
 export class PostDetailComponent implements OnInit {
 
@@ -24,10 +24,13 @@ export class PostDetailComponent implements OnInit {
     this.getPostService.getSinglePost(this.currentPostId)
     .then((post: Post) => {
       this.post = post;
-      this.loaded = true;
     })
     .catch((error) => {
       this.errorHandler.openModal('Wystapil blad - prosimy sprobowac pozniej', JSON.stringify(error.message));
+    })
+    // act as finally..
+    .then(() => {
+      this.loaded = true;
     });
   }
 

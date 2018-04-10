@@ -1,10 +1,17 @@
-<div><a [routerLink]="['/wall']">Go back to wall</a></div>
+<div class="app-post-detail">
 
-<h1>Details</h1>
+    <div><a [routerLink]="['/wall']" class="btn btn-default" id="gobackbutton">Go back to wall</a></div>
 
-<div *ngIf="loaded">
-    <div>UserId:{{post.userId}}</div>
-    <div>Id: {{post.id}}</div>
-    <div>Ttitle:{{post.title}}</div>
-    <div>Body:{{post.body}}</div>
+    <h1>Details</h1>
+
+    <div *ngIf="!loaded">
+        LOADING...
+    </div>
+    <div *ngIf="loaded" class="detail-section">
+        <div><b>UserId:</b>{{post.userId}}</div>
+        <div><b>Id:</b> {{post.id}}</div>
+        <div><b>Ttitle:</b> {{post.title}}</div>
+        <div><b>Body:</b> {{post.body}}</div>
+    </div>
+
 </div>

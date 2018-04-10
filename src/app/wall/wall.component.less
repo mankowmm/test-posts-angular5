@@ -1,0 +1,62 @@
+.app-wall {
+
+    .top-area {
+        display: flex;
+        flex-wrap: wrap;
+        .left, .right {
+            width: 100%;
+            margin: 10px 0;
+        }
+    }
+    .posts {
+        display: flex;
+        flex-wrap: wrap;
+        margin-top: 20px;
+    
+        .post {
+            width: 100%;
+            margin-top: 10px;
+            margin-bottom: 10px;
+            border: 1px solid gray;
+            padding: 10px;
+            &:hover {
+                background-color: #F5F5F5;
+            }
+            a {
+                color: gray;
+                div {
+                    margin: 10px 0;
+                    &.user-section {
+                        font-size: 120%;
+                    }
+                }
+                &:hover {
+                    text-decoration: none;
+                }
+            }
+        }
+    }
+    
+}
+
+@media screen and (min-width: 768px) {
+    .app-wall {
+        .posts {
+            .post {
+                width: calc(~"50% - 20px");
+                margin: 10px 10px 10px 0;
+            }
+        } 
+    }
+}
+
+@media screen and (min-width: 1024px) {
+    .app-wall {
+        .posts {
+            .post {
+                width: calc(~"33.3% - 20px");
+            }
+        }
+    }
+}
+

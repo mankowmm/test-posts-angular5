@@ -1,9 +1,20 @@
-<app-logout></app-logout>
+<div class="app-wall">
 
-<div class="mm-wall-component">
-    <div *ngFor="let post of posts" class="mm-wall-post"> 
-        <div>UserId: {{ post.userId }}</div>
-        <div>Title: {{ post.title }}</div>
-        <div><a [routerLink]="['/post', post.id]">Show detail</a></div>
+    <div class="top-area">
+        <div class="left">
+                <app-logout></app-logout>
+        </div>
+        <div class="right">
+            <app-search-posts></app-search-posts>
+        </div>
+    </div>
+
+    <div class="posts">
+        <div *ngFor="let post of posts" class="post"> 
+            <a [routerLink]="['/post', post.id]">
+                <div class="user-section">UserId: {{ post.userId }}</div>
+                <div class="title-section">Title: {{ post.title }}</div>
+            </a>
+        </div>
     </div>
 </div>

@@ -16,6 +16,7 @@ import { PostDetailComponent } from './post-detail/post-detail.component';
 import { AlertModule } from 'ngx-bootstrap';
 import { ModalModule } from 'ngx-bootstrap/modal';
 import { ErrorHandlerComponent, ErrorHandlerModalComponent } from './error-handler/error-handler.component';
+import { SearchPostsComponent } from './search-posts/search-posts.component';
 
 
 @NgModule({
@@ -26,7 +27,8 @@ import { ErrorHandlerComponent, ErrorHandlerModalComponent } from './error-handl
     LogoutComponent,
     PostDetailComponent,
     ErrorHandlerComponent,
-    ErrorHandlerModalComponent
+    ErrorHandlerModalComponent,
+    SearchPostsComponent
   ],
   imports: [
     BrowserModule,

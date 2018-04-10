@@ -7,7 +7,7 @@ import { ErrorHandlerComponent } from '../error-handler/error-handler.component'
 @Component({
   selector: 'app-wall',
   templateUrl: './wall.component.html',
-  styleUrls: ['./wall.component.css']
+  styleUrls: ['./wall.component.less']
 })
 export class WallComponent implements OnInit {
 

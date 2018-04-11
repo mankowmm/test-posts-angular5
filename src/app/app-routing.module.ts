@@ -5,7 +5,7 @@ import { WallComponent } from './wall/wall.component';
 import { PostDetailComponent } from './post-detail/post-detail.component';
 
 const routes: Routes = [
-  { path: 'login', component: LoginpageComponent },
+  { path: '', component: LoginpageComponent },
   { path: 'wall', component: WallComponent },
   { path: 'post/:postId', component: PostDetailComponent }
 ];

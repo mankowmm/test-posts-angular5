@@ -13,12 +13,14 @@ export class WallComponent implements OnInit {
 
   private posts: Post[];
   private searchPhrase: string;
+  private loaded: boolean;
   constructor(private getPostService: GetPostsService, private errorHandler: ErrorHandlerComponent) { }
 
   ngOnInit() {
     this.getPostService.getAllPosts()
     .then((posts: Post[]) => {
       this.posts = posts;
+      this.loaded = true;
     })
     .catch((error) => {
       this.errorHandler.openModal('Wystapil blad - prosimy sprobowac pozniej', JSON.stringify(error.message));

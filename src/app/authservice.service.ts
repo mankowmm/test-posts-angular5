@@ -12,14 +12,14 @@ export class AuthserviceService {
   constructor() { }
 
   public isUserNameValid (username: string) {
-    if (username.length >= 5) {
+    if (username && username.length >= 5) {
       return true;
     }
     return false;
   }
 
   public isPasswordValid (password: string) {
-    if (password.length >= 8) {
+    if (password && password.length >= 8) {
       const isRegexMatching = AuthserviceService.regexAtLeastOneLoweOneUpperOneNumber.test(password);
       if (isRegexMatching) {
         return true;

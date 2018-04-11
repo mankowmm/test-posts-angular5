@@ -19,6 +19,7 @@ import { ErrorHandlerComponent, ErrorHandlerModalComponent } from './error-handl
 import { SearchPostsComponent } from './search-posts/search-posts.component';
 import { PostFilterPipe } from './post.filter.pipe';
 import { BsModalService } from 'ngx-bootstrap/modal';
+import { LoginpageComponent } from './loginpage/loginpage.component';
 
 @NgModule({
   declarations: [
@@ -30,7 +31,8 @@ import { BsModalService } from 'ngx-bootstrap/modal';
     ErrorHandlerComponent,
     ErrorHandlerModalComponent,
     SearchPostsComponent,
-    PostFilterPipe
+    PostFilterPipe,
+    LoginpageComponent
   ],
   imports: [
     BrowserModule,
